@@ -14,10 +14,14 @@ echo Installing Notepad++...
 C:\nppInstaller.exe /S
 del C:\nppInstaller.exe
 
-:: Assume the VS Code installer is already in the specified folder or downloaded previously
+:: Download Visual Studio Code
+echo Downloading Visual Studio Code...
+curl -L "https://update.code.visualstudio.com/latest/win32-x64-user/stable" --output C:\Users\WDAGUtilityAccount\Downloads\vscode.exe
+
+:: Install Visual Studio Code
 echo Installing Visual Studio Code...
-call C:\Users\WDAGUtilityAccount\Desktop\install\VSCodeInstall.cmd
+C:\Users\WDAGUtilityAccount\Downloads\vscode.exe /verysilent /suppressmsgboxes
+del C:\Users\WDAGUtilityAccount\Downloads\vscode.exe
 
 echo Installation complete.
 pause
-
